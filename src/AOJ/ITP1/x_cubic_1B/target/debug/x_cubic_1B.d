@@ -1,0 +1,1 @@
+/Users/sakuraitatsuya/Documents/programming/learn_to_rust/src/AOJ/ITP1/x_cubic_1B/target/debug/x_cubic_1B: /Users/sakuraitatsuya/Documents/programming/learn_to_rust/src/AOJ/ITP1/x_cubic_1B/src/main.rs

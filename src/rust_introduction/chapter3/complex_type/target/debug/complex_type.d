@@ -1,1 +1,0 @@
-/Users/sakuraitatsuya/Documents/programming/learn_to_rust/src/rust_introduction/chapter3/complex_type/target/debug/complex_type: /Users/sakuraitatsuya/Documents/programming/learn_to_rust/src/rust_introduction/chapter3/complex_type/src/main.rs

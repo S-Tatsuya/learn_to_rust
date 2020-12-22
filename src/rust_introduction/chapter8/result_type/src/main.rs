@@ -59,6 +59,14 @@ fn main() {
         Ok(n) => println!("Ok: {}", n),
         Err(err) => println!("Error: {:?}", err),
     }
+
+	// except method
+	let n = "100".parse::<i32>()
+		.expect("This is not number.");
+	println!("n is {}", n);
+	let n = "xxx".parse::<i32>()
+		.expect("This is not number.");
+	println!("n is {}", n);
 }
 
 use std::num::ParseIntError;

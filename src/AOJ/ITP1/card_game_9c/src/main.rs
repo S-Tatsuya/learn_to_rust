@@ -1,3 +1,6 @@
+// use std::fs::File;
+// use std::io::{self, BufRead, BufReader};
+
 enum Result {
     Taro,
     Hanako,
@@ -7,6 +10,7 @@ enum Result {
 fn main() {
     let n = input();
     let result = games(n.parse().unwrap());
+    // let result = games_t();
     result_disp(result);
 }
 
@@ -16,6 +20,29 @@ fn input() -> String {
 
     input.trim().to_string()
 }
+
+/*
+fn games_t() -> (u64, u64) {
+    let mut taro_point: u64 = 0;
+    let mut hanako_point: u64 = 0;
+    for result in BufReader::new(File::open("in.txt").unwrap()).lines() {
+        let cards = result.unwrap();
+        if cards == "1000" { continue; }
+        println!("{}", cards);
+        let mut cards = cards.split_whitespace();
+
+        let taro = cards.next().unwrap().to_string();
+        let hanako = cards.next().unwrap().to_string();
+
+        let result = get_point(&taro, &hanako);
+
+        taro_point += result.0;
+        hanako_point += result.1;
+    }
+
+    (taro_point, hanako_point)
+}
+*/
 
 fn games(n: u64) -> (u64, u64) {
     let mut i = 0;
@@ -52,8 +79,13 @@ fn is_taro_win(taro: &String, hanako: &String) -> Result {
 
     let mut i: usize = 0;
     let taro_len = taro.chars().count();
+    let hanako_len = hanako.chars().count();
 
     while i < taro_len {
+        if i >= hanako_len {
+            return Result::Taro;
+        }
+
         if &taro[i..(i+1)] > &hanako[i..(i+1)] {
             return Result::Taro 
         } else if &taro[i..(i+1)] < &hanako[i..(i+1)] {
